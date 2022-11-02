@@ -1,0 +1,20 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "This is ToDo web applicationg made using Express Js and mongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "todo"
+  ],
+  "author": "Sanambir Singh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node.js": "^0.0.1-security",
+    "nodemon": "^2.0.20"
+  }
+}
