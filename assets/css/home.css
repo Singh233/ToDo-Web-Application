@@ -26,21 +26,20 @@ body {
     grid-template-columns: 1fr 2fr 2fr 2fr;
     align-items: center;
     width: 100%;
-    height: 7vh;
-    background-color: aliceblue;
+    height: 9vh;
 }
 
 .brand {
     display: flex;
     justify-content: center;
-    border: 2px solid black;
 }
 
 .brand>p {
     align-self: center;
-    margin-left: 2px;
+    margin-left: 5px;
     font-size: 1.7rem;
     font-weight: 600;
+    color: rgb(101, 101, 101);
 }
 
 .brand .logo {
@@ -49,29 +48,117 @@ body {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background-color: white;
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.2);
 
 }
 
 .brand .logo .inner-circle {
-    height: 25px;
-    width: 25px;
+    height: 26px;
+    width: 26px;
     border-radius: 50%;
-    background-color: white;
+    background-color: #0070F2;
     align-self: center;
+    
 }
+
+
+/* Date and time */
 
 .date-time {
-    border: 2px solid black;
+    display: flex;
+    justify-self: center;
+    background-color: #FFDCE8;
+    border-radius: 15px;
+    padding: 0px 5px;
+
+}
+.date-time .emoji {
+    font-size: 1.5rem;
+}
+.date-time>p {
+    align-self: center;
+    margin: 5px;
+    font-size: 600;
 }
 
+
+/* Search */
 .search-task {
-    border: 2px solid black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.options {
-    border: 2px solid black;
+.search-task>input {
+    padding: 5px;
+    padding-left: 15px;
+    height: 33px;
+    width: 60%;
+    border-radius: 10px;
+    color: white;
+    background-color: rgba(0, 88, 210, 0.545);
+    border-style: none;
 }
+
+.search-task>input::-webkit-input-placeholder {
+    color: white;
+}
+
+
+.search-task>p {
+    font-size: 1.5rem;
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+/* Options or right side of nav */
+.options {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.profile-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 15px;
+    background-image: url('/img/profile3.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 5px;
+    margin-left: 10px;
+
+
+}
+
+.notifications, .inbox {
+    margin: 5px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: rgb(255, 243, 184);
+    /* box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.109); */
+    transition: 0.2s all ease-in-out;
+}
+
+.inbox {
+    background-color: #FFD5EA;
+}
+
+
+.notifications:hover, .inbox:hover {
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.109);
+
+}
+
+
+
+
 
 
 
@@ -86,6 +173,6 @@ body {
 
 .main-content {
     width: 100%;
-    height: 93vh;
-    background-color: aquamarine;
+    height: 91vh;
+    background-color: #eaecee7b;
 }
