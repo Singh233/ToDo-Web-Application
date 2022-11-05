@@ -102,71 +102,27 @@
                         
                     </form> -->
 
-
+                    <% for(let i of task_list) { %>
                     <div id="dummy-task">
                         <div id="description">
                             <p>
-                                Lorem ipsum dolor sit amet.
+                                <span>🎯</span>
+                                <%= i.description %>
                             </p>
                         </div>
                         <div id="actions">
-                            <p id="due-date"><span>🗓️</span>&nbsp; 2 January, 2022 Friday</p>
+                            <p id="due-date"><span>🗓️</span>&nbsp; <%= new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(i.date) %></p>
                             <div id="category-button-container">
                                 <button id="complete-button"><span>✅</span>&nbsp; Complete</button>
-                                <p id="category">Work</p>
+                                <p id="category"><%= i.category %></p>
                             </div>
                             
                         </div>
                     </div>
 
-                    <div id="dummy-task">
-                        <div id="description">
-                            <p>
-                                Lorem ipsum dolor sit amet.
-                            </p>
-                        </div>
-                        <div id="actions">
-                            <p id="due-date"><span>🗓️</span>&nbsp; 2 January, 2022 Friday</p>
-                            <div id="category-button-container">
-                                <button id="complete-button"><span>✅</span>&nbsp; Complete</button>
-                                <p id="category">Work</p>
-                            </div>
-                            
-                        </div>
-                    </div>
+                    <% } %>
 
-                    <div id="dummy-task">
-                        <div id="description">
-                            <p>
-                                Lorem ipsum dolor sit amet.
-                            </p>
-                        </div>
-                        <div id="actions">
-                            <p id="due-date"><span>🗓️</span>&nbsp; 2 January, 2022 Friday</p>
-                            <div id="category-button-container">
-                                <button id="complete-button"><span>✅</span>&nbsp; Complete</button>
-                                <p id="category">Work</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-
-                    <div id="dummy-task">
-                        <div id="description">
-                            <p>
-                                Lorem ipsum dolor sit amet.
-                            </p>
-                        </div>
-                        <div id="actions">
-                            <p id="due-date"><span>🗓️</span>&nbsp; 2 January, 2022 Friday</p>
-                            <div id="category-button-container">
-                                <button id="complete-button"><span>✅</span>&nbsp; Complete</button>
-                                <p id="category">Work</p>
-                            </div>
-                            
-                        </div>
-                    </div>
+                    
                 </div>
 
             </div>

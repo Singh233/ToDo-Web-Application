@@ -26,7 +26,8 @@ app.post('/create-task', function(request, response) {
     Todo.create({
         description: request.body.description,
         date: request.body.date,
-        category: 'work'
+        category: 'work',
+        status: false
     }, function(error, newTask) {
         if (error) {
             console.log('error in creating a task');
