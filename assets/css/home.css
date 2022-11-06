@@ -255,10 +255,13 @@ body {
     margin-top: 5px;
 }
 #pending-tasks .top-part>p, .completed-tasks .top-part>p {
-    font-size: 1.2rem;
     margin: 10px;
     color: #A93E00;
     font-weight: 500;
+}
+
+.heading-font-size {
+    font-size: 1.2rem;
 }
 
 .completed-tasks .top-part>p {
@@ -334,7 +337,7 @@ body {
     padding: 7px;
     color: #A93E00;
     font-weight: 500;
-    margin: 8px 0;
+    margin-bottom: 8px;
 }
 #description>p>span {
     font-size: 1.5rem;
@@ -355,7 +358,7 @@ body {
     color: #AA0808;
     border-radius: 15px;
     align-self: center;
-    font-weight: 600;
+    font-weight: 500;
     border: 1.5px solid #aa08082f;
 
 }
@@ -562,7 +565,7 @@ body {
 @keyframes fadeIn {
     0% { 
         opacity: 0;
-        transform: scale(0.5);
+        transform: scale(0);
     }
     70% { 
         transform: scale(1.1);

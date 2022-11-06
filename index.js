@@ -20,24 +20,6 @@ app.use(express.static('assets'));
 
 
 
-app.post('/create-task', function(request, response) {
-    console.log(request.body.description);
-    
-    Todo.create({
-        description: request.body.description,
-        date: request.body.date,
-        category: 'work',
-        status: false
-    }, function(error, newTask) {
-        if (error) {
-            console.log('error in creating a task');
-            return;
-        }
-        console.log('*********', newTask);
-        return response.redirect('back');
-    })
-});
-
 app.listen(port, function(error) {
     if (error) {
         console.log(`Error in running the server ${error}`);

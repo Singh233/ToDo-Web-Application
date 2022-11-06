@@ -114,3 +114,9 @@ function removeButton() {
     taskAddToggle = true;
     
 }
+
+
+function fadeOutAnimation() {
+    const b = document.getElementById('dummy-task');
+    b.classList.toggle('fade-out');
+}

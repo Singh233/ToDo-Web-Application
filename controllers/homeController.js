@@ -1,8 +1,8 @@
-const Contact = require('../models/todo');
+const Todo = require('../models/todo');
 
 
 module.exports.home = function(request, response) {
-    Contact.find({}, function(error, tasks) {
+    Todo.find({}, function(error, tasks) {
         if (error) {
             console.log('Error in fetching tasks from db*****');
             return;

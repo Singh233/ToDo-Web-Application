@@ -69,7 +69,7 @@
 
             <div id="pending-tasks">
                 <div class="top-part">
-                    <p><span>🤨</span> Pending Tasks</p>
+                    <p class="heading-font-size"><span>🤨</span> Pending Tasks</p>
                     <p id="total-tasks-pending"> 3 Tasks </p>
                 </div>
 
@@ -102,7 +102,8 @@
                         
                     </form> -->
 
-                    <% for(let i of task_list) { %>
+                    <% for(let i of task_list) { 
+                        if (!i.status) { %>
                     <div id="dummy-task">
                         <div id="description">
                             <p>
@@ -112,15 +113,17 @@
                         </div>
                         <div id="actions">
                             <p id="due-date"><span>🗓️</span>&nbsp; <%= new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(i.date) %></p>
-                            <div id="category-button-container">
-                                <button id="complete-button"><span>✅</span>&nbsp; Complete</button>
+                            <form action="/complete-task" method="post" id="category-button-container">
+                                <input type="hidden" name="id" value="<%= i._id %>">
+                                <button onclick="fadeOutAnimation()" type="submit" id="complete-button"><span>✅</span>&nbsp; Complete</button>
                                 <p id="category"><%= i.category %></p>
-                            </div>
+                            </form>
                             
                         </div>
                     </div>
 
-                    <% } %>
+                    <% } 
+                } %>
 
                     
                 </div>
@@ -129,7 +132,7 @@
     
             <div class="completed-tasks">
                 <div class="top-part">
-                    <p><span>😎</span>  Completed Tasks</p>
+                    <p class="heading-font-size"><span>😎</span>  Completed Tasks</p>
                     <p id="total-tasks-completed"> 0 Tasks </p>
                 </div>
                 <div class="display-tasks">
