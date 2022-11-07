@@ -7,6 +7,8 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 <body>
 
@@ -25,7 +27,7 @@
         <!-- Display date and time -->
         <div class="date-time">
             <p class="emoji">🗓️</p>
-            <p>1 January, 2022 Thursday</p>
+            <p><%= new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(new Date()) %></p>
         </div>
 
         <div class="search-task">
@@ -70,7 +72,7 @@
             <div id="pending-tasks">
                 <div class="top-part">
                     <p class="heading-font-size"><span>🤨</span> Pending Tasks</p>
-                    <p id="total-tasks-pending"> 3 Tasks </p>
+                    <p id="total-tasks-pending"><%= task_list.filter((i) => !i.status).length %> Tasks </p>
                 </div>
 
                 <div id="d-tasks" class="display-tasks">
@@ -133,17 +135,45 @@
             <div class="completed-tasks">
                 <div class="top-part">
                     <p class="heading-font-size"><span>😎</span>  Completed Tasks</p>
-                    <p id="total-tasks-completed"> 0 Tasks </p>
+                    <p id="total-tasks-completed"> <%= task_list.filter((i) => i.status).length %> Tasks </p>
                 </div>
                 <div class="display-tasks">
-                    
+                    <% for(let i of task_list) { 
+                        if (i.status) { %>
+                    <div id="completed-dummy" class="tasks">
+                        <div id="description">
+                            <p><%= i.description %></p>
+                            <i class="fa-regular fa-trash-can delete-button"></i>
+                        </div>
+
+                        <div id="stat">
+                            <p id="p-stat"><i class="fa-solid fa-circle"></i>&nbsp;&nbsp;On time</p>
+                            <span></span>
+                            <p id="sh" class="show-hide">See Details <i class="fa-solid fa-arrow-right"></i></p>
+                        </div>
+
+                        <div id="bottom-stats" class="display-prop hide-element" >
+                            <div id="completed-date">
+                                <p id="due-date"><span>🗓️</span>&nbsp; <%= new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(i.date) %></p>
+                            </div>
+
+                            <div id="completed-category">
+                                <p id="category"><%= i.category %></p>
+                            </div>
+
+                            
+                        </div>
+
+                        
+                    </div>
+                    <% } 
+                } %>
                 </div>
             </div>
         </div>
         
     </main>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/js/home.js"></script>
 
 </body>

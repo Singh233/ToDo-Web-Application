@@ -95,7 +95,7 @@ body {
     padding-left: 15px;
     height: 33px;
     width: 60%;
-    border-radius: 10px;
+    border-radius: 15px;
     color: white;
     background-color: rgba(0, 88, 210, 0.545);
     border-style: none;
@@ -289,11 +289,11 @@ body {
 
 }
 .completed-tasks {
-    background-color: #D1EFFF;    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background-color: #D1EFFF;  
     border: 1.5px solid rgba(0, 88, 210, 0.186);
 }
 
-#pending-tasks .display-tasks {
+.display-tasks {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -303,16 +303,7 @@ body {
     transition: 0.4s all ease-in-out;
 }
 
-.display-tasks::-webkit-scrollbar {
-    margin: 2px;
-    background-color: rgb(255, 243, 184);
-}
 
-.display-tasks::-webkit-scrollbar-thumb {
-    background-color:#A93E00;
-    border-radius: 8px;
-
-}
 
 
 #dummy-task {
@@ -332,6 +323,11 @@ body {
 
 #dummy-task:hover {
     box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.058);
+}
+
+#description {
+    display: flex;
+    justify-content: space-between;
 }
 #description>p {
     padding: 7px;
@@ -353,14 +349,14 @@ body {
     justify-content: center;
     align-items: center;
     width: 90%;
-    padding: 7px 10px;
+    padding: 5px 10px;
     background-color: #FFD5EA;
     color: #AA0808;
     border-radius: 15px;
     align-self: center;
     font-weight: 500;
     border: 1.5px solid #aa08082f;
-
+    font-size: 0.9rem;
 }
 
 #due-date>span {
@@ -375,15 +371,16 @@ body {
 }
 
 #category-button-container #complete-button {
-    padding: 5px 10px;
+    padding: 3px 10px;
     border-radius: 15px;
     color: #256F3A;
     background-color: #EBF5CB;
     border: 1.5px solid #256f3a2f;
-    font-weight: 600;
-    font-size: 1.007rem;
+    font-weight: 500;
+    font-size: 0.9rem;
     transition: 0.2s all ease-in-out;
     cursor: pointer;
+    
 }
 
 #category-button-container #complete-button:hover {
@@ -547,6 +544,149 @@ body {
 
 
 
+
+
+/* Completed Tasks */
+
+#completed-dummy {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: auto;
+    padding: 10px;
+    width: 80%;
+    background-color: white;
+    border-radius: 25px;
+    border: 1.5px solid rgba(0, 88, 210, 0.239);
+    transition: 0.2s all ease-in-out;
+    margin-top: 15px;
+
+}
+
+#completed-dummy:hover {
+    box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.058);
+}
+
+
+.display-prop {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 5px;
+    align-items: center;
+}
+
+#completed-dummy #description>p {
+    color: #0057D2;
+}
+#completed-date #due-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 5px;
+    background-color: white;
+    margin-top: 10px;
+    color: #AA0808;
+    border-radius: 15px;
+    align-self: center;
+    font-weight: 500;
+    border: 1.5px solid #aa0808c3;
+    font-size: 0.8rem;
+    transition: 0.3s all ease-in-out;
+}
+
+#completed-date #due-date:hover {
+    background-color: #AA0808;
+    color: white;
+}
+
+#completed-date #due-date>span {
+    font-size: 1.2rem;
+}
+
+#bottom-stats #category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 7px;
+    border-radius: 15px;
+    color: black;
+    font-size: 0.85rem;
+    border: 1.5px solid #000000c9;
+    transition: 0.3s all ease-in-out;
+
+}
+
+#bottom-stats #category:hover {
+    background-color: black;
+    color: white;
+
+}
+#stat {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    margin: 7px;
+}
+#stat #p-stat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 7px 7px;
+    border-radius: 15px;
+    background-color: #C2FCEE;
+    color: #046C7A;
+    border: 1.5px solid rgba(37, 111, 58, 0.217);
+    transition: 0.3s all ease-in-out;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+#stat #p-stat:hover {
+    background-color: #046C7A;
+    color: #C2FCEE;
+}
+
+#stat .show-hide {
+    color: #0057D2;
+    align-self: center;
+    font-size: 0.9rem;
+}
+
+.delete-button {
+    color: #EE3939;
+    align-self: center;
+    margin-right: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.hide-element {
+    display: none;
+}
+
+/* Scrollbar settings */
+.display-tasks::-webkit-scrollbar {
+    margin: 2px;
+    background-color: rgb(255, 243, 184);
+}
+
+.display-tasks::-webkit-scrollbar-thumb {
+    background-color:#A93E00;
+    border-radius: 8px;
+
+}
+
+
+.completed-tasks .display-tasks::-webkit-scrollbar {
+    margin: 2px;
+    background-color: #D1EFFF;
+}
+
+.completed-tasks .display-tasks::-webkit-scrollbar-thumb {
+    background-color: #0057D2;
+    border-radius: 8px;
+
+}
 
 ::-webkit-scrollbar {
     width: 12px;

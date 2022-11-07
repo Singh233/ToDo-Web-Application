@@ -120,3 +120,11 @@ function fadeOutAnimation() {
     const b = document.getElementById('dummy-task');
     b.classList.toggle('fade-out');
 }
+
+
+// $('.show-hide').click(function() {
+//     console.log('clicked');
+//     $('.display-prop').toggle('.hide-element');
+// })
+
+
