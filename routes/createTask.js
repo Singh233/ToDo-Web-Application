@@ -5,12 +5,12 @@ const Todo = require('../models/todo');
 router.use(express.urlencoded());
 
 router.post('/create-task', function(request, response) {
-    console.log(request.body.description);
+    console.log(request.body.category);
     
     Todo.create({
         description: request.body.description,
         date: request.body.date,
-        category: 'work',
+        category: request.body.category,
         status: false
     }, function(error, newTask) {
         if (error) {

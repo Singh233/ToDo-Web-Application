@@ -36,6 +36,11 @@
         </div>
 
         <div class="options">
+            <div class="search-small">
+                🔍
+                
+            </div>
+
             <div class="notifications">
                 🔔
                 
@@ -54,15 +59,23 @@
     <main class="main-content">
         <div class="tasks-dashboard">
             <div class="dash1">
+               <p><span>🛠️</span>&nbsp; Dashboard Under Progress</p> 
             </div>
 
             <div class="group-dash">
+                <div onclick="addTask()" id="d3" class="dash3">
+                    <span>🤩</span>&nbsp;Add Task
+                </div>
+
                 <div class="dash2">
+                    <span>🤖</span>&nbsp;Settings
+                </div>
+
+                <div class="dash-menu">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
     
-                <div onclick="addTask()" id="d3" class="dash3">
-
-                </div>
+                
             </div>
             
         </div>
@@ -75,6 +88,13 @@
                     <p id="total-tasks-pending"><%= task_list.filter((i) => !i.status).length %> Tasks </p>
                 </div>
 
+                <% if (task_list.filter((i) => !i.status).length == 0) { %>
+
+                    <div onclick="addTask()" id="add-task-new" >
+                        <p>Add New Task</p>
+                    </div>
+                <% } %>
+
                 <div id="d-tasks" class="display-tasks">
                     <!-- <form action="/create-task" method="post" id="add-task-form">
                         <div class="form-header">
@@ -86,7 +106,7 @@
                         
                         
                         <div id="date-dropdown">
-                            <input type="date" placeholder="Due Date" name="date" required>
+                            <input type="date" placeholder="Due Date" name="date" class="date-picker" required>
                             <div class="dropdown">
                                 <span id="select-cat" name="category">Category</span>
                                 <div class="dropdown-content">
@@ -137,13 +157,22 @@
                     <p class="heading-font-size"><span>😎</span>  Completed Tasks</p>
                     <p id="total-tasks-completed"> <%= task_list.filter((i) => i.status).length %> Tasks </p>
                 </div>
+
+                <% if (task_list.filter((i) => i.status).length == 0) { %>
+
+                    <div id="complete-task-new">
+                        <p>Common Champ!</p>
+                    </div>
+                <% } %>
                 <div class="display-tasks">
                     <% for(let i of task_list) { 
                         if (i.status) { %>
                     <div id="completed-dummy" class="tasks">
                         <div id="description">
                             <p><%= i.description %></p>
-                            <i class="fa-regular fa-trash-can delete-button"></i>
+                            <a href="/delete-task/?id=<%= i._id %>">
+                                <i class="fa-regular fa-trash-can delete-button"></i>
+                            </a>
                         </div>
 
                         <div id="stat">
@@ -171,8 +200,24 @@
                 </div>
             </div>
         </div>
-        
+        <div class="credits">
+            <div class="author-profile">
+            </div>
+    
+            <div class="about-author">
+                <p class="credits-text">Proudly Developed By</p>
+                <p class="author-name">Sanambir Singh &nbsp;<span>🤗</span></p>
+            </div>
+        </div>
     </main>
+
+
+    <div id="sucess-pop-up">
+
+    </div>
+
+
+    
 
     <script src="/js/home.js"></script>
 
